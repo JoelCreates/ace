@@ -6,7 +6,7 @@
 # Designed to  gather system statistics.
 
 AUTHOR="Joel"
-VERSION="1"
+VERSION="2"
 RELEASED="5TH OCTOBER, 2021"
 
 # Display  help message
