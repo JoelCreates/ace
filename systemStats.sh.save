@@ -1,14 +1,14 @@
 #! /usr/bin/
 # CREATED BY: You already know who it is
 # Date Created: 5/10/2021
-# Version 0.3
+# Version 1
 
 # Designed to  gather system statistics.
 
 AUTHOR="Joel"
-VERSION="0.3"
+VERSION="2"
 RELEASED="5TH OCTOBER, 2021"
-FILE=~/ace/systemStats.log
+
 # Display  help message
 
 USAGE(){
@@ -37,26 +37,18 @@ fi
 # With  the flags method, some of the arguments can be made mandatory or optional
 # a:b (a is mandatory , b is optional) abc is all optional
 
-while getopts ctiv OPTION 
+while getopts tiv OPTION 
 do
 case ${OPTION}
 in
 i) IP=$(ifconfig wlan0 | grep -w inet | awk '{print$2}') 
 	echo ${IP};;
-c) USAGE=$(grep -w 'cpu' /proc/stat | awk '{usage=($2+$3+$4+$6+$7+$8)*100/($2+$3+$4+$5+$6+$7+$8)}
-					   {free=($5)*100/($2+$3+$4+$5+$6+$7+$8)}
-					    END {printf " Used CPU: %.2f%%\n", usage}
-					    	{printf "Free CPU: %.2f%%", free} ')
-	echo ${USAGE};;
+c) USAGE=greGREP -W)
 t) TEMP=$(cat /sys/class/thermal/thermal_zone0/temp)
 	echo ${TEMP} "need to divide by thousand...";;
 v) echo -e "systemStats:\n\t Version: ${VERSION} Released: ${RELEASED} Author: ${AUTHOR}";;
 
 esac
 done
-
-NOW=$(date +%Y-%m-%dT%TZ)
-echo -e ${NOW}"\tIP: ${IP}\tTemperature: ${TEMP} \tCPU: ${USAGE}" >> ${FILE}
-
 
 #end of script
