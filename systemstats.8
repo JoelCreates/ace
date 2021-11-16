@@ -1,0 +1,40 @@
+'\"
+.TH "SYSTEMSTATS" "8" "16 Nov 2021" "0.3" "SYSTEMSTATS man page"
+.\" --------------------------------------
+.\" --------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -------------------------------------
+.\" * MAIN CONTENTS START HERE *
+.\" -------------------------------------
+.SH "NAME"
+systemstats \- retrieves information from host system
+.SH "SYNOPSIS"
+.HP \w'\fRsystemStats\fR\ 'u
+\fR systemStats\fR [\-c \fIcpu usage\fR] [\-i\ \fIIP Address\fR] [\-t\ \fITemperature\fR]
+.br
+
+.SH "DESCRIPTION"
+.PP
+\fB\-c\fR
+.RS
+ 	shows current CPU usage: Free=##.##\% Used=##.##\%
+.RE
+.PP
+\fB\-i\fR
+.RS
+	show hosts IPv4 address
+.RE
+.PP
+\fB\-t\fR
+.RS
+	shows system temperature in Celsius. Temp=## C
+.RE
+
+.SH "NOTES"
+this script will be developed over time to display more information using different options
+
+.SH "AUTHORS"
+Joel Amoani Okanta <joel.okanta@yahoo.com>
